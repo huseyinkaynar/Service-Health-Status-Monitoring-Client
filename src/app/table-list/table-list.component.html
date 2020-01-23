@@ -1,0 +1,99 @@
+<div class="main-content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header card-header-danger">
+                        <h4 class="card-title ">Simple Table</h4>
+                        <p class="card-category"> Here is a subtitle for this table</p>
+                    </div>
+
+                    <div class="card-body">
+                        <form class="navbar-form">
+                            <div class="input-group no-border">
+                                <input type="text" value="" class="form-control" placeholder="Arama..." name="search"
+                                    [(ngModel)]="searchText" autocomplete="off">
+                                <button mat-raised-button type="submit" class="btn btn-white btn-round btn-just-icon">
+                                    <i class="material-icons">search</i>
+                                    <div class="ripple-container"></div>
+                                </button>
+                            </div>
+                        </form>
+                        <div class="table-responsive">
+                            <table class="table">
+                                <thead class=" text-primary">
+                                    <th>
+                                        ID
+                                    </th>
+                                    <th>
+                                        Name
+                                    </th>
+                                    <th>
+                                        Url
+                                    </th>
+                                    <th>
+                                        Date
+                                    </th>
+                                    <th>
+                                        Status
+                                    </th>
+
+                                </thead>
+
+                                <tbody>
+                                    <tr [ngClass]="{'row-up': service.status === 'up', 'row-down': service.status === 'down'}"
+                                        *ngFor="let service of services | filter:searchText">
+                                        <td>
+                                            {{ service.id }}
+                                        </td>
+                                        <td>
+                                            {{ service.name }}
+                                        </td>
+                                        <td>
+                                            {{ service.url }}
+                                        </td>
+                                        <td>
+                                            {{ service.date }}
+                                        </td>
+                                        <td>
+                                            {{ service.status }}
+                                        </td>
+
+                                    </tr>
+                                </tbody>
+                                <tbody>
+
+                                    <ngb-pagination [collectionSize]="70" [(page)]="page"
+                                        aria-label="Default pagination" (pageChange)="loadPage($event)">
+                                    </ngb-pagination>
+
+
+                                </tbody>
+
+                            </table>
+
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-12">
+                <div class="card card-plain">
+                    <div class="card-header card-header-danger">
+                        <h4 class="card-title mt-0"> Table on Plain Background</h4>
+                        <p class="card-category"> Here is a subtitle for this table</p>
+                    </div>
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="table table-hover">
+
+
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
