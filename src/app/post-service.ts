@@ -1,6 +1,6 @@
 export class PostService {
-    id:string;
+    id: string;
     serviceName: string;
     ServiceUrl: string;
-    time: string;
+    time: Date;
 }

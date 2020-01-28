@@ -13,6 +13,7 @@ import { NotificationsComponent } from '../../notifications/notifications.compon
 import { UpgradeComponent } from '../../upgrade/upgrade.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { FilterPipe } from '/Users/hkaynar/Desktop/material-dashboard-angular2-master/src/app/filter.pipe';
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
 
 import {
   MatButtonModule,
@@ -24,6 +25,7 @@ import {
 } from '@angular/material';
 @NgModule({
   imports: [
+    Ng2SearchPipeModule,
     NgbModule,
     CommonModule,
     RouterModule.forChild(AdminLayoutRoutes),

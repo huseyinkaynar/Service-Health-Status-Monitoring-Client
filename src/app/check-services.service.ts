@@ -14,7 +14,7 @@ export class CheckServicesService {
     this.url = "http://localhost:8080/services"
   }
   getServices(page: number) {
-    return this.http.get<Services[]>(this.url + '/page?pageNumber=' + page);
+    return this.http.get<Services[]>(this.url + '/page');
   }
 
 

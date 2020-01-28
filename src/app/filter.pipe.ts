@@ -7,18 +7,18 @@ export class FilterPipe implements PipeTransform {
 
   transform(items: any[], searchText: string): any[] {
 
-    if(!items){
+    if (!items) {
       return [];
     }
-    if(!searchText){
+    if (!searchText) {
       return items;
     }
 
-    searchText=searchText.toLocaleLowerCase();
+    searchText = searchText.toLowerCase();
 
-    return items.filter(it=>{
+    return items.filter(it => {
 
-      return it.toLocaleLowerCase.includes(searchText);
+      return it.toLowerCase().includes(searchText);
     });
 
 
