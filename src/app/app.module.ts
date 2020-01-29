@@ -25,6 +25,7 @@ import {
 } from '@agm/core';
 import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.component';
 import { Services } from './services';
+import { MatPaginatorModule } from '@angular/material';
 
 @NgModule({
   imports: [
@@ -36,6 +37,7 @@ import { Services } from './services';
     ComponentsModule,
     RouterModule,
     AppRoutingModule,
+    MatPaginatorModule,
     HttpClientModule,
     AgmCoreModule.forRoot({
       apiKey: 'YOUR_GOOGLE_MAPS_API_KEY'

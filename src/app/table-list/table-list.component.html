@@ -9,9 +9,9 @@
                     </div>
 
                     <div class="card-body">
-                        <form class="navbar-form">
+                        <form class="navbar-form w-25 p-3">
                             <div class="input-group no-border">
-                                <input type="text" value="" class="form-control" placeholder="Arama..." name="search"
+                                <input type="text" value="" class="form-control " placeholder="Arama..." name="search"
                                     [(ngModel)]="term" autocomplete="off">
                                 <button mat-raised-button type="submit" class="btn btn-white btn-round btn-just-icon">
                                     <i class="material-icons">search</i>
@@ -40,8 +40,8 @@
 
                                 </thead>
 
-                                <tbody>
-                                    <tr *ngFor="let service of services | filter:term">
+                                <tbody *ngIf="pageServices?.content">
+                                    <tr *ngFor="let service of pageServices.content | filter:term">
                                         <td>
                                             {{ service.id }}
                                         </td>
@@ -59,12 +59,12 @@
                                         </td>
 
                                     </tr>
+
                                 </tbody>
+
                                 <tbody>
 
-                                    <ngb-pagination [collectionSize]="70" [(page)]="page"
-                                        aria-label="Default pagination" (pageChange)="loadPage($event)">
-                                    </ngb-pagination>
+
 
 
                                 </tbody>
@@ -73,10 +73,36 @@
 
 
 
+
+
                         </div>
+
+
                     </div>
+                    <nav aria-label="...">
+                        <ul style="margin-left: 180px;margin-top:-10px;" class="pagination"
+                            *ngIf="pageServices?.content">
+                            <li *ngFor="let page of ' '.repeat(pageServices.totalPages).split(''), let i = index "
+                                (click)="onSelect(i)" [class.active]="i === selectedPage" class="page-item"><a
+                                    class="page-link" href="#/table-list">{{i}}</a>
+                            </li>
+                        </ul>
+                    </nav>
+                    <span>
+                        <div class="input-group input-group-sm w-25 p-3">
+                            <div class="input-group-prepend">
+                            </div>
+                            <input type="text" class="form-control" aria-label="Small" placeholder="Arama..."
+                                aria-describedby="inputGroup-sizing-sm" (change)="onSelectSize($event.target.value)">
+                        </div>
+
+                    </span>
+
+
+
                 </div>
             </div>
+
             <div class="col-lg-6 col-md-12">
                 <div class="card">
                     <div class="card-header card-header-warning">
