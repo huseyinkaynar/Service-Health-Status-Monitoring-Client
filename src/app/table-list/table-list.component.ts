@@ -34,7 +34,7 @@ export class TableListComponent implements OnInit {
 
   getServices(): void {
     this.checkServicesService.getServices()
-      .subscribe(services => this.services = services);
+      .subscribe(services => this.pageServices = services);
   }
 
   getPageServices(page: number, size: number): void {
@@ -51,6 +51,7 @@ export class TableListComponent implements OnInit {
       })
 
   }
+
 
   value = '';
   onEnter(value: string) {
@@ -87,8 +88,10 @@ export class TableListComponent implements OnInit {
 
 
 
+
   ngOnInit() {
-    this.getPageServices(this.pageNumber, this.pageSize);
+    //this.getPageServices(this.pageNumber, this.pageSize);
+    this.getServices();
   }
 
 

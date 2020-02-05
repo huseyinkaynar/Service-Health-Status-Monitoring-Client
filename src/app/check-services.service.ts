@@ -11,7 +11,7 @@ import { Servicepage } from './servicepage';
 })
 export class CheckServicesService {
   private url = "http://localhost:8080/services/page";
-  private urlPage = 'http://localhost:8080/services/page?page=';
+  // private urlPage = 'http://localhost:8080/services/page?page=';
   private searchUrl = "http://localhost:8080/services/search?name="
 
 
@@ -19,21 +19,23 @@ export class CheckServicesService {
   constructor(private http: HttpClient) { }
 
 
-  getServices(): Observable<Services[]> {
+  getServices(): Observable<Servicepage> {
+    var url = this.url;
 
-    return this.http.get<Services[]>(this.url);
+
+    return this.http.get<Servicepage>(url);
+
   }
 
   getPageServices(page: number, size: number): Observable<Servicepage> {
-    var url = this.urlPage;
-    url = url + page + "&size=" + size;
+    var url = this.url;
+    url = url + "?page=" + page + "&size=" + size;
     return this.http.get<Servicepage>(url);
 
   }
   getSearchPage(search: String): Observable<Servicepage> {
     var url = this.searchUrl;
     url = url + search;
-    console.log(url);
 
     return this.http.get<Servicepage>(url);
   }
