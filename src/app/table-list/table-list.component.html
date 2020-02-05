@@ -1,7 +1,7 @@
 <div class="main-content">
     <div class="container-fluid">
         <div class="row">
-            <div class="col-md-12">
+            <div class="col-lg-10 col-md-12">
                 <div class="card">
                     <div class="card-header card-header-danger">
                         <h4 class="card-title ">Simple Table</h4>
@@ -11,7 +11,8 @@
                     <div class="card-body">
                         <form class="navbar-form w-25 p-3">
                             <div class="input-group no-border">
-                                <input type="text" value="" class="form-control " placeholder="Arama..." name="search"
+                                <input type="text" value="" class="form-control " #box
+                                    (keyup.enter)="onEnter(box.value)" placeholder="Arama..." name="search"
                                     [(ngModel)]="term" autocomplete="off">
                                 <button mat-raised-button type="submit" class="btn btn-white btn-round btn-just-icon">
                                     <i class="material-icons">search</i>
@@ -41,7 +42,7 @@
                                 </thead>
 
                                 <tbody *ngIf="pageServices?.content">
-                                    <tr *ngFor="let service of pageServices.content | filter:term">
+                                    <tr *ngFor="let service of pageServices.content ">
                                         <td>
                                             {{ service.id }}
                                         </td>
@@ -62,13 +63,6 @@
 
                                 </tbody>
 
-                                <tbody>
-
-
-
-
-                                </tbody>
-
                             </table>
 
 
@@ -76,6 +70,7 @@
 
 
                         </div>
+
 
 
                     </div>
@@ -88,13 +83,15 @@
                             </li>
                         </ul>
                     </nav>
+
                     <span>
                         <div class="input-group input-group-sm w-25 p-3">
                             <div class="input-group-prepend">
                             </div>
-                            <input type="text" class="form-control" aria-label="Small" placeholder="Arama..."
+                            <input type="text" class="form-control" aria-label="Small" placeholder="Size"
                                 aria-describedby="inputGroup-sizing-sm" (change)="onSelectSize($event.target.value)">
                         </div>
+
 
                     </span>
 
@@ -114,55 +111,38 @@
                             <thead class="text-warning">
                                 <th>ID</th>
                                 <th>Name</th>
-                                <th>Salary</th>
-                                <th>Country</th>
+                                <th>Service Url</th>
+                                <th>Date</th>
+                                <th>Status</th>
+
                             </thead>
-                            <tbody>
-                                <tr>
-                                    <td>1</td>
-                                    <td>Dakota Rice</td>
-                                    <td>$36,738</td>
-                                    <td>Niger</td>
+                            <tbody *ngIf="pageServices?.content">
+                                <tr *ngFor="let service of pageServices.content ">
+                                    <td>
+                                        {{ service.id }}
+                                    </td>
+                                    <td>
+                                        {{ service.name }}
+                                    </td>
+                                    <td>
+                                        {{ service.url }}
+                                    </td>
+                                    <td>
+                                        {{ service.date }}
+                                    </td>
+                                    <td>
+                                        {{ service.status }}
+                                    </td>
+
                                 </tr>
-                                <tr>
-                                    <td>2</td>
-                                    <td>Minerva Hooper</td>
-                                    <td>$23,789</td>
-                                    <td>Curaçao</td>
-                                </tr>
-                                <tr>
-                                    <td>3</td>
-                                    <td>Sage Rodriguez</td>
-                                    <td>$56,142</td>
-                                    <td>Netherlands</td>
-                                </tr>
-                                <tr>
-                                    <td>4</td>
-                                    <td>Philip Chaney</td>
-                                    <td>$38,735</td>
-                                    <td>Korea, South</td>
-                                </tr>
+
                             </tbody>
+
                         </table>
                     </div>
                 </div>
             </div>
-            <div class="col-md-12">
-                <div class="card card-plain">
-                    <div class="card-header card-header-danger">
-                        <h4 class="card-title mt-0"> Table on Plain Background</h4>
-                        <p class="card-category"> Here is a subtitle for this table</p>
-                    </div>
-                    <div class="card-body">
-                        <div class="table-responsive">
-                            <table class="table table-hover">
 
-
-                            </table>
-                        </div>
-                    </div>
-                </div>
-            </div>
         </div>
     </div>
 </div>

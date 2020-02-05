@@ -26,6 +26,7 @@ import {
 import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.component';
 import { Services } from './services';
 import { MatPaginatorModule } from '@angular/material';
+import { MatPaginator, MatTableDataSource } from '@angular/material';
 
 @NgModule({
   imports: [
@@ -46,6 +47,7 @@ import { MatPaginatorModule } from '@angular/material';
   declarations: [
     AppComponent,
     AdminLayoutComponent,
+
 
   ],
   providers: [Services],

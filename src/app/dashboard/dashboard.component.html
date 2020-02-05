@@ -4,7 +4,7 @@
             <div class="col-md-10">
                 <div class="card">
                     <div class="card-header card-header-danger">
-                        <h4 class="card-title">Check Service</h4>
+                        <h4 class="card-title">Check Service Status</h4>
                         <p class="card-category">Please enter service</p>
                     </div>
                     <!--Anasayfa Form-->
@@ -22,18 +22,18 @@
                                 </div>
                             </div>
                             <div class="row">
-                                <div class="col-md-12">
+                                <div class="col-md-6">
                                     <mat-form-field class="example-full-width">
                                         <input [(ngModel)]="postService.serviceUrl" name="url" matInput
-                                            placeholder="Url" type="text" required #serviceUrl="ngModel">
+                                            placeholder="Service Address" type="text" required #serviceUrl="ngModel">
                                     </mat-form-field>
                                 </div>
                             </div>
                             <div class="row">
-                                <div class="col-md-4">
+                                <div class="col-md-2">
                                     <mat-form-field class="example-full-width">
-                                        <input [(ngModel)]="postService.time" name="time" matInput placeholder="Time"
-                                            type="text"  required #time="ngModel">
+                                        <input [(ngModel)]="postService.time" name="time" matInput
+                                            placeholder="Monitoring Time" type="text"  required #time="ngModel">
                                     </mat-form-field>
                                 </div>
                             </div>
@@ -43,7 +43,7 @@
                                 </div>
                             </div>
 
-                            <button mat-raised-button class="btn btn-danger btn-block"
+                            <button mat-raised-button class="btn btn-danger btn-block col-md-2"
                                 (click)="showNotification('top','right')">Summit</button>
                             <div class="clearfix"></div>
                         </form>
