@@ -90,7 +90,6 @@ export class TableListComponent implements OnInit {
 
 
   ngOnInit() {
-    //this.getPageServices(this.pageNumber, this.pageSize);
     this.getServices();
   }
 
