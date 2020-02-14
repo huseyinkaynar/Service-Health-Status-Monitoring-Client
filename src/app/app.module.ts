@@ -24,7 +24,7 @@ import {
   AgmCoreModule
 } from '@agm/core';
 import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.component';
-import { Services } from './services';
+import { Services } from './services-class/services';
 import { MatPaginatorModule } from '@angular/material';
 import { MatPaginator, MatTableDataSource } from '@angular/material';
 

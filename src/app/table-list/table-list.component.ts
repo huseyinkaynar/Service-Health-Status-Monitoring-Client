@@ -1,9 +1,9 @@
 import { Component, OnInit, ViewChild, Input } from '@angular/core';
-import { Services } from 'app/services';
-import { CheckServicesService } from 'app/check-services.service';
+import { Services } from 'app/services-class/services';
+import { CheckServicesService } from 'app/checkstatus-service/check-services.service';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { error } from '@angular/compiler/src/util';
-import { Servicepage } from 'app/servicepage';
+import { Servicepage } from 'app/servicepage-class/servicepage';
 import * as Rx from 'rxjs/Rx';
 import { of } from 'rxjs/observable/of';
 import { PageEvent } from '@angular/material/paginator';
