@@ -10,8 +10,7 @@ import { Servicepage } from './servicepage';
   providedIn: 'root'
 })
 export class CheckServicesService {
-  private url = "http://localhost:8080/services/page";
-  // private urlPage = 'http://localhost:8080/services/page?page=';
+  private url = "http://localhost:8080/services/";
   private searchUrl = "http://localhost:8080/services/search?name="
 
 
