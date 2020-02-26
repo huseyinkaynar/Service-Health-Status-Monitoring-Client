@@ -79,7 +79,7 @@
                             *ngIf="pageServices?.content">
                             <li *ngFor="let page of ' '.repeat(pageServices.totalPages).split(''), let i = index "
                                 (click)="onSelect(i)" [class.active]="i === selectedPage" class="page-item"><a
-                                    class="page-link" href="#/table-list">{{i}}</a>
+                                    class="page-link" href="/#/service-list">{{i}}</a>
                             </li>
                         </ul>
                     </nav>
