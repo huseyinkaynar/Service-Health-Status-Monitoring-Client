@@ -1,0 +1,57 @@
+<div class="main-content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-10">
+                <div class="card">
+                    <div class="card-header card-header-danger">
+                        <h4 class="card-title">Check Service Status</h4>
+                        <p class="card-category">Please enter service</p>
+                    </div>
+                    <!--Anasayfa Form-->
+                    <div class="card-body">
+                        <form (ngSubmit)="onSubmit()" #servicesForm="ngForm">
+                            <div class="row">
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <mat-form-field class="example-full-width">
+                                        <input matInput placeholder="Service Name" type="text"
+                                            [(ngModel)]="postService.serviceName" name="name" required
+                                            #serviceName="ngModel">
+                                    </mat-form-field>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <mat-form-field class="example-full-width">
+                                        <input [(ngModel)]="postService.serviceUrl" name="url" matInput
+                                            placeholder="Service Address" type="text" required #serviceUrl="ngModel">
+                                    </mat-form-field>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-2">
+                                    <mat-form-field class="example-full-width">
+                                        <input [(ngModel)]="postService.time" name="time" matInput
+                                            placeholder="Monitoring Time" type="text"  required #time="ngModel">
+                                    </mat-form-field>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+
+                                </div>
+                            </div>
+
+                            <button mat-raised-button class="btn btn-danger btn-block col-md-2"
+                                (click)="showNotification('top','right')">Summit</button>
+                            <div class="clearfix"></div>
+                        </form>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
