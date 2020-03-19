@@ -54,7 +54,7 @@
     "rxjs-compat": "6.5.2",
     "web-animations-js": "2.3.1",
     "zone.js": "0.9.1",
-    "acorn": "7.1.1"
+    "acorn": "6.4.1"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "0.800.2",
@@ -80,6 +80,6 @@
     "ts-node": "8.2.0",
     "tslint": "5.17.0",
     "typescript": "3.4.5",
-    "acorn": "7.1.1"
+    "acorn": "6.4.1"
   }
 }
