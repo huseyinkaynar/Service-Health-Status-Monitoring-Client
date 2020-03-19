@@ -1,8 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { Services } from '../services-class/services';
-import { catchError, map, tap } from 'rxjs/operators';
 import { Servicepage } from '../servicepage-class/servicepage';
 
 
@@ -32,9 +30,9 @@ export class CheckServicesService {
     return this.http.get<Servicepage>(url);
 
   }
-  getSearchPage(search: String): Observable<Servicepage> {
+  getSearchPage(search: String, page: number, size: number): Observable<Servicepage> {
     var url = this.searchUrl;
-    url = url + search;
+    url = url + search + "&page=" + page + "&size=" + size;
 
     return this.http.get<Servicepage>(url);
   }

@@ -9,23 +9,34 @@
                     </div>
                     <!--Anasayfa Form-->
                     <div class="card-body">
-                        <form (ngSubmit)="onSubmit()" #servicesForm="ngForm">
+                        <form (ngSubmit)="servicesForm.form.valid && onSubmit()" #servicesForm="ngForm">
                             <div class="row">
                             </div>
                             <div class="row">
                                 <div class="col-md-6">
                                     <mat-form-field class="example-full-width">
                                         <input matInput placeholder="Service Name" type="text"
-                                            [(ngModel)]="postService.serviceName" name="name" required
-                                            #serviceName="ngModel">
+                                            [(ngModel)]="postService.serviceName" name="name"
+                                            [ngClass]="{'is-valid': servicesForm.submitted && serviceName.invalid}"
+                                            required #serviceName="ngModel">
+                                        <div *ngIf="servicesForm.submitted && serviceName.invalid"
+                                            class="invalid-input">
+                                            <div *ngIf="serviceName.errors?.required">Service Name Not Valid</div>
+                                        </div>
                                     </mat-form-field>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col-md-6">
                                     <mat-form-field class="example-full-width">
-                                        <input [(ngModel)]="postService.serviceUrl" name="url" matInput
-                                            placeholder="Service Address" type="text" required #serviceUrl="ngModel">
+                                        <input [(ngModel)]="postService.serviceUrl" name="url"
+                                            [ngClass]="{'is-valid': servicesForm.submitted && serviceUrl.invalid}"
+                                            matInput placeholder="Service Address" type="text" required
+                                            #serviceUrl="ngModel">
+                                        <div *ngIf="servicesForm.submitted && serviceName.invalid"
+                                            class="invalid-input">
+                                            <div *ngIf="serviceUrl.errors?.required">Service Address Not Valid</div>
+                                        </div>
                                     </mat-form-field>
                                 </div>
                             </div>
@@ -33,7 +44,12 @@
                                 <div class="col-md-2">
                                     <mat-form-field class="example-full-width">
                                         <input [(ngModel)]="postService.time" name="time" matInput
-                                            placeholder="Monitoring Time" type="text"  required #time="ngModel">
+                                            placeholder="Monitoring Time" type="text"
+                                            [ngClass]="{'is-valid': servicesForm.submitted && time.invalid}"  required
+                                            #time="ngModel">
+                                        <div *ngIf="servicesForm.submitted && time.invalid" class="invalid-input">
+                                            <div *ngIf="serviceUrl.errors?.required">Time Not Valid</div>
+                                        </div>
                                     </mat-form-field>
                                 </div>
                             </div>

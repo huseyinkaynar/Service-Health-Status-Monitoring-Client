@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import * as Chartist from 'chartist';
 import { PostservicesFormService } from 'app/poststatus-service/postservices-form.service';
 import { PostService } from 'app/postservice-class/post-service';
 declare var $: any;
@@ -23,10 +22,6 @@ export class DashboardComponent implements OnInit {
     this.router.navigate(["/checkservices"]);
   }
 
-
-
-
-
   showNotification(from, align) {
     const type = ['', 'info', 'success', 'warning', 'danger'];
 
@@ -45,8 +40,6 @@ export class DashboardComponent implements OnInit {
       }
     });
   }
-
-
 
   ngOnInit() {
 
